@@ -10,23 +10,30 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-Unit5-01-HTML/sw.js", {
-    scope: "/ICS2O-Unit5-01-HTML/",
+  navigator.serviceWorker.register("/ICS2OR-assignment5/sw.js", {
+    scope: "/ICS2OR-assignment5/",
   })
 }
 
-const randomNumber = Math.floor(Math.random() * 6) + 1
+/**
+ * This function calculates pi.
+ */
+function buttonPressed() {
+  let numberOfLoops = parseFloat(document.getElementById("number").value)
+  let counter = 0
+  let denomonaitor = -1
+  let Pi = 0
 
-function updateSliderValue(valueFromSlider) {
-  document.getElementById("slider-value").innerHTML = valueFromSlider
-
-  if (valueFromSlider == randomNumber) {
-    document.getElementById("answer").innerHTML =
-      "the answer was, " + randomNumber + "!" + " You got it! Excellent."
+  while (counter < numberOfLoops) {
+    
+    let numerator = 4
+    denomonaitor = denomonaitor + 2
+    let multiply = (-1) ** counter
+    let aLittleBit = (numerator / denomonaitor) * multiply
+    Pi = Pi - aLittleBit
+    counter = counter + 1
   }
 
-  if (valueFromSlider != randomNumber) {
-    document.getElementById("answer").innerHTML =
-      "Sorry the answer was, " + randomNumber + "!" + " please try again."
-  }
+    document.getElementById("pianswer").innerHTML = "Your answer is: " + Pi + "!"
+
 }
